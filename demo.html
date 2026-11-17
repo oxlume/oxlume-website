@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-i18n="t.demo">Live demo · Oxlume</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}@media (max-width:860px){.phones{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+<header class="site-header" id="site-header"></header>
+<main id="main">
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="demo.eyebrow">Live demo</p>
+    <h1 class="mw" data-i18n="demo.h1">Watch the pipeline plan a week, right here</h1>
+    <p class="lead" data-i18n="demo.lead">Pick a type of place, choose which sample photos to use and run the planner. This is a scripted preview of the real stages; the full app does it on your photos.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap demo" id="live-demo">
+    <div class="drop">
+      <div class="form-row">
+        <label class="f" for="demo-type"><span data-i18n="demo.type">Type of place</span>
+          <select id="demo-type"><option value="cafe" data-i18n="demo.t1">Cafe / bakery</option><option value="salon" data-i18n="demo.t2">Salon / barber</option><option value="shop" data-i18n="demo.t3">Shop / boutique</option><option value="gym" data-i18n="demo.t4">Studio / gym</option></select></label>
+        <label class="f" for="demo-name"><span data-i18n="demo.name">Name</span><input id="demo-name" placeholder="Greenwich Cafe"></label>
+      </div>
+      <span class="muted" style="font-size:.85rem" data-i18n="demo.pick">Sample photos (tap to exclude)</span>
+      <div class="thumbs"></div>
+      <button class="btn btn-primary" type="button" id="demo-run" data-i18n="demo.run">Plan my week</button>
+      <div class="log" aria-live="polite"></div>
+    </div>
+    <div class="out" aria-live="polite"><div class="notice" data-i18n="demo.empty">The plan will appear here with a reason for every post.</div></div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="demo.prev.eyebrow">What lands on your phone</p>
+    <h2 data-i18n="demo.prev.h2">Three previews, three trades. Tap Approve or Edit.</h2>
+    <div class="center" style="margin-top:22px"><div class="toggle" id="fmt-toggle"><button type="button" aria-pressed="true" data-fmt="video" data-i18n="demo.fmt.video">Video</button><button type="button" aria-pressed="false" data-fmt="post" data-i18n="demo.fmt.post">Photo post</button></div></div>
+    <div class="phones" id="phones-video" style="margin-top:28px">
+      <div><div class="phone"><div class="notch"></div><div class="screen">
+        <div class="reel" data-captions="caps.cafe" data-slides="img/cafe-1.jpg,img/cafe-2.jpg,img/cafe-3.jpg,img/cafe-4.jpg"><div class="bgimg"></div><span class="badge pill lume" data-i18n="badge.cafe">Cafe</span><div class="cap"></div><div class="handle">@greenwich_cafe_london</div><div class="ai" data-i18n="ai.label">AI · labelled</div><div class="progress"><i></i></div></div>
+        <div class="approve" data-handle="@greenwich_cafe_london"><button class="yes" type="button" data-i18n="demo.approve">Approve</button><button class="no" type="button" data-i18n="demo.edit">Edit</button></div>
+      </div></div></div>
+      <div><div class="phone"><div class="notch"></div><div class="screen">
+        <div class="reel salon" data-captions="caps.salon" data-slides="img/salon-1.jpg,img/salon-2.jpg,img/salon-3.jpg,img/salon-4.jpg"><div class="bgimg"></div><span class="badge pill lume" data-i18n="badge.salon">Salon</span><div class="cap"></div><div class="handle">@nora_studio_london</div><div class="ai" data-i18n="ai.label">AI · labelled</div><div class="progress"><i></i></div></div>
+        <div class="approve" data-handle="@nora_studio_london"><button class="yes" type="button" data-i18n="demo.approve">Approve</button><button class="no" type="button" data-i18n="demo.edit">Edit</button></div>
+      </div></div></div>
+      <div><div class="phone"><div class="notch"></div><div class="screen">
+        <div class="reel shop" data-captions="caps.shop" data-slides="img/shop-1.jpg,img/shop-2.jpg,img/shop-3.jpg,img/shop-4.jpg"><div class="bgimg"></div><span class="badge pill lume" data-i18n="badge.shop">Shop</span><div class="cap"></div><div class="handle">@olmo_home_store</div><div class="ai" data-i18n="ai.label">AI · labelled</div><div class="progress"><i></i></div></div>
+        <div class="approve" data-handle="@olmo_home_store"><button class="yes" type="button" data-i18n="demo.approve">Approve</button><button class="no" type="button" data-i18n="demo.edit">Edit</button></div>
+      </div></div></div>
+    </div>
+    <div class="phones" id="phones-post" style="margin-top:28px" hidden>
+      <div><div class="phone"><div class="notch"></div><div class="screen">
+        <div class="igpost"><div class="ig-h"><span class="ig-av"></span>@greenwich_cafe_london</div><div class="ig-img" style="background-image:url(img/cafe-2.jpg)"><span class="ai" data-i18n="ai.label">AI · labelled</span></div><div class="ig-i"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg><svg viewBox="0 0 24 24"><path d="M4 12l16-8-4 16-5-6z"/></svg></div><div class="ig-l" data-i18n="post.likes">128 likes</div><div class="ig-c"><b>@greenwich_cafe_london</b><span data-i18n="post.cafe">Flat white and a croissant, €4.50 until 11:00. See you at the counter. #londoncafe</span></div></div>
+        <div class="approve" data-handle="@greenwich_cafe_london"><button class="yes" type="button" data-i18n="demo.approve">Approve</button><button class="no" type="button" data-i18n="demo.edit">Edit</button></div>
+      </div></div></div>
+      <div><div class="phone"><div class="notch"></div><div class="screen">
+        <div class="igpost"><div class="ig-h"><span class="ig-av"></span>@nora_studio_london</div><div class="ig-img" style="background-image:url(img/salon-2.jpg)"><span class="ai" data-i18n="ai.label">AI · labelled</span></div><div class="ig-i"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg><svg viewBox="0 0 24 24"><path d="M4 12l16-8-4 16-5-6z"/></svg></div><div class="ig-l" data-i18n="post.likes">128 likes</div><div class="ig-c"><b>@nora_studio_london</b><span data-i18n="post.salon">Cool blonde in three hours. Two slots left this Saturday after 15:00, link in bio. #londonhair</span></div></div>
+        <div class="approve" data-handle="@nora_studio_london"><button class="yes" type="button" data-i18n="demo.approve">Approve</button><button class="no" type="button" data-i18n="demo.edit">Edit</button></div>
+      </div></div></div>
+      <div><div class="phone"><div class="notch"></div><div class="screen">
+        <div class="igpost"><div class="ig-h"><span class="ig-av"></span>@olmo_home_store</div><div class="ig-img" style="background-image:url(img/shop-3.jpg)"><span class="ai" data-i18n="ai.label">AI · labelled</span></div><div class="ig-i"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg><svg viewBox="0 0 24 24"><path d="M4 12l16-8-4 16-5-6z"/></svg></div><div class="ig-l" data-i18n="post.likes">128 likes</div><div class="ig-c"><b>@olmo_home_store</b><span data-i18n="post.shop">Hand-painted ceramic bowls, €18 each. In store now, open until 20:00. #londonshop</span></div></div>
+        <div class="approve" data-handle="@olmo_home_store"><button class="yes" type="button" data-i18n="demo.approve">Approve</button><button class="no" type="button" data-i18n="demo.edit">Edit</button></div>
+      </div></div></div>
+    </div>
+    <p class="muted center" style="font-size:.85rem;margin-top:18px" data-i18n="demo.prev.note">Sample photos in this demo are AI-generated illustrations. Real videos use your own photos and clips.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid grid-2" style="align-items:start">
+    <div>
+      <p class="eyebrow" data-i18n="demo.rep.eyebrow">Monthly report</p>
+      <h2 data-i18n="demo.rep.h2">The report you get, in words you use</h2>
+      <p class="muted" data-i18n="demo.rep.p">What went out, how many people saw it, what to do more of. The numbers below are an example of the format, not a real client.</p>
+    </div>
+    <div class="card" style="display:grid;gap:10px">
+      <div><p class="eyebrow" style="margin:0" data-i18n="demo.rep.ex">Example · October</p><h3 style="margin:.3rem 0 0">Greenwich Cafe</h3></div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:12px;border-bottom:1px solid var(--line);padding:8px 0"><span data-i18n="demo.rep.r1">Videos published</span><span class="mono">8</span></div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:12px;border-bottom:1px solid var(--line);padding:8px 0"><span data-i18n="demo.rep.r2">Photo posts and stories</span><span class="mono">4 + 4</span></div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:12px;border-bottom:1px solid var(--line);padding:8px 0"><span data-i18n="demo.rep.r3">Video views</span><span class="mono" data-num="12400">12,400</span></div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:12px;border-bottom:1px solid var(--line);padding:8px 0"><span data-i18n="demo.rep.r4">People reached</span><span class="mono" data-num="6800">6,800</span></div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:12px;padding:8px 0"><span data-i18n="demo.rep.r5">Profile visits and route taps</span><span class="mono">310</span></div>
+      <div class="notice" data-i18n="demo.rep.tip">Tip for November: morning videos bring the most profile visits. The planner will add one more per week.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section band-brand">
+  <div class="wrap center" style="max-width:720px">
+    <h2 data-i18n="demo.cta.h2">Want this on your own photos?</h2>
+    <p class="muted" data-i18n="demo.cta.p">Join the beta. First month free, set-up in 15 minutes.</p>
+    <a class="btn btn-lume" href="contact.html" data-i18n="demo.cta.btn">Join the beta</a>
+  </div>
+</section>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="i18n.js"></script>
+<script src="i18n-uk.js"></script>
+<script src="i18n-de.js"></script>
+<script src="i18n-es.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

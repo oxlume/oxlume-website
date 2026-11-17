@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-i18n="t.pricing">Pricing · Oxlume</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+<header class="site-header" id="site-header"></header>
+<main id="main">
+
+<section class="section">
+  <div class="wrap center">
+    <p class="eyebrow" data-i18n="price.eyebrow">Pricing</p>
+    <h1 data-i18n="price.h1">Less than one hour of an agency. Every month.</h1>
+    <p class="lead" data-i18n="price.lead">Flat monthly price, cancel any time. The first month of the beta is free on every plan.</p>
+    <div class="toggle" id="bill-toggle" style="margin-top:18px"><button type="button" aria-pressed="true" data-period="month" data-i18n="price.monthly">Monthly</button><button type="button" aria-pressed="false" data-period="year" data-i18n="price.yearly">Yearly, 2 months free</button></div>
+  </div>
+  <div class="wrap plans" style="margin-top:40px">
+    <div class="card plan rv">
+      <span class="pill" data-i18n="price.p1n">Starter</span>
+      <div class="price" data-month="39" data-year="390"><span class="v">€39</span> <small class="per" data-i18n="price.perMonth">/ month</small></div>
+      <p class="muted" style="margin:0" data-i18n="price.p1d">For one place that wants to show up every week.</p>
+      <ul>
+        <li data-i18n="price.p1l1">4 short videos a month (1 a week)</li>
+        <li data-i18n="price.p1l2">Instagram Reels and feed</li>
+        <li data-i18n="price.p1l3">Weekly AI plan and one-tap approval</li>
+        <li data-i18n="price.p1l4">Monthly report</li>
+      </ul>
+      <a class="btn btn-ghost" href="contact.html" data-i18n="price.start">Start free</a>
+    </div>
+    <div class="card plan hl rv">
+      <span class="pill lume" data-i18n="price.p2n">Growth · most popular</span>
+      <div class="price" data-month="79" data-year="790"><span class="v">€79</span> <small class="per" data-i18n="price.perMonth">/ month</small></div>
+      <p class="muted" style="margin:0" data-i18n="price.p2d">For a busy place that wants videos, posts and stories handled.</p>
+      <ul>
+        <li data-i18n="price.p2l1">8 short videos a month (2 a week)</li>
+        <li data-i18n="price.p2l2">4 photo posts and weekly stories</li>
+        <li data-i18n="price.p2l3">Instagram, Google Business, TikTok drafts</li>
+        <li data-i18n="price.p2l4">Planner you can talk to, autopilot per format</li>
+        <li data-i18n="price.p2l5">Approvals in WhatsApp or Telegram</li>
+        <li data-i18n="price.p2l6">Monthly report with recommendations</li>
+      </ul>
+      <a class="btn btn-primary" href="contact.html" data-i18n="price.start">Start free</a>
+    </div>
+    <div class="card plan rv">
+      <span class="pill" data-i18n="price.p3n">Studio</span>
+      <div class="price" data-month="149" data-year="1490"><span class="v">€149</span> <small class="per" data-i18n="price.perMonth">/ month</small></div>
+      <p class="muted" style="margin:0" data-i18n="price.p3d">For several locations or a brand with a team.</p>
+      <ul>
+        <li data-i18n="price.p3l1">12 short videos a month (3 a week)</li>
+        <li data-i18n="price.p3l2">Up to 3 locations and 3 Instagram accounts</li>
+        <li data-i18n="price.p3l3">Creative mode with generated scenes (labelled)</li>
+        <li data-i18n="price.p3l4">Team seats and approval roles</li>
+        <li data-i18n="price.p3l5">Priority rendering and support</li>
+      </ul>
+      <a class="btn btn-ghost" href="contact.html" data-i18n="price.start">Start free</a>
+    </div>
+  </div>
+  <p class="muted center" style="font-size:.85rem;margin-top:18px" data-i18n="price.vat">Prices exclude VAT. Beta pricing is locked for 12 months for early members.</p>
+</section>
+
+<section class="section band">
+  <div class="wrap grid grid-2" style="align-items:start">
+    <div>
+      <p class="eyebrow" data-i18n="price.calc.eyebrow">What you save</p>
+      <h2 data-i18n="price.calc.h2">Compare with what you do now</h2>
+      <p class="muted" data-i18n="price.calc.p">Most places either pay a freelancer €200 to €700 a month or spend their own evenings on it. Enter your numbers.</p>
+      <form id="calc" class="form card" onsubmit="return false">
+        <label class="f" for="c-cur"><span data-i18n="price.calc.l1">What you pay now per month (€, 0 if nothing)</span><input id="c-cur" name="current" type="number" min="0" value="300"></label>
+        <label class="f" for="c-h"><span data-i18n="price.calc.l2">Hours a week you spend on social media</span><input id="c-h" name="hours" type="number" min="0" step="0.5" value="3"></label>
+      </form>
+    </div>
+    <div class="grid" style="gap:14px">
+      <div class="card"><span class="muted" data-i18n="price.calc.o1">Money saved per month vs Growth</span><b class="mono" style="display:block;font-family:var(--font-display);font-size:2.2rem" data-out="money">€221</b></div>
+      <div class="card"><span class="muted" data-i18n="price.calc.o2">Hours back per month</span><b class="mono" style="display:block;font-family:var(--font-display);font-size:2.2rem" data-out="time">12 h</b></div>
+      <div class="card hl"><span class="muted" data-i18n="price.calc.o3">Value per year (hour counted at €20)</span><b class="mono" style="display:block;font-family:var(--font-display);font-size:2.2rem" data-out="total">€5,532</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="price.cmp.h2">Side by side</h2>
+    <div class="table-wrap" style="margin-top:20px">
+      <table>
+        <thead><tr><th></th><th>Oxlume Growth</th><th data-i18n="price.cmp.c2">Freelancer</th><th data-i18n="price.cmp.c3">Agency</th><th data-i18n="price.cmp.c4">Doing it yourself</th></tr></thead>
+        <tbody>
+          <tr><td data-i18n="price.cmp.r1">Price per month</td><td class="mono" data-eur="79">€79</td><td class="mono" data-eur="200-700">€200–700</td><td class="mono" data-eur="300-2000">€300–2,000</td><td class="mono" data-i18n="price.cmp.r1d">12+ hours</td></tr>
+          <tr><td data-i18n="price.cmp.r2">Videos per month</td><td class="mono">8</td><td class="mono">2–8</td><td class="mono">4–12</td><td class="mono">0–2</td></tr>
+          <tr><td data-i18n="price.cmp.r3">Plans around your calendar and weather</td><td class="y">✓</td><td class="n">—</td><td class="n" data-i18n="price.cmp.some">sometimes</td><td class="n">—</td></tr>
+          <tr><td data-i18n="price.cmp.r4">Automatic price and spelling check</td><td class="y">✓</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+          <tr><td data-i18n="price.cmp.r5">Learns from results every week</td><td class="y">✓</td><td class="n">—</td><td class="n" data-i18n="price.cmp.some">sometimes</td><td class="n">—</td></tr>
+          <tr><td data-i18n="price.cmp.r6">Cancel any time</td><td class="y">✓</td><td class="n" data-i18n="price.cmp.varies">varies</td><td class="n" data-i18n="price.cmp.contract">contract</td><td class="y">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap" style="max-width:780px">
+    <h2 data-i18n="price.faq.h2">Billing questions</h2>
+    <details><summary data-i18n="price.q1">Is the first month really free?</summary><p data-i18n="price.a1">Yes. Beta members get the full plan for one month, no card required. If you stay, billing starts on day 31; if not, nothing happens.</p></details>
+    <details><summary data-i18n="price.q2">What counts as a "video"?</summary><p data-i18n="price.a2">A finished 9:16 clip of 6 to 30 seconds, published or delivered as a TikTok draft. Edits and re-renders of the same post do not count.</p></details>
+    <details><summary data-i18n="price.q3">Can I pause for a holiday?</summary><p data-i18n="price.a3">Yes, any time, from the app. Unused videos do not roll over, but the plan pauses with you.</p></details>
+    <details><summary data-i18n="price.q4">Do I own the videos?</summary><p data-i18n="price.a4">Fully. Download them, reuse them, keep them after you cancel.</p></details>
+  </div>
+</section>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="i18n.js"></script>
+<script src="i18n-uk.js"></script>
+<script src="i18n-de.js"></script>
+<script src="i18n-es.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
